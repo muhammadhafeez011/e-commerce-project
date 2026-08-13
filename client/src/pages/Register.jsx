@@ -14,7 +14,7 @@ function Register() {
 
     try {
       const res = await fetch(
-        "https://e-commerce-project-ten-ecru.vercel.app",
+        "https://e-commerce-project-ten-ecru.vercel.app/api/auth/register",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

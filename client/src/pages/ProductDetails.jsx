@@ -7,7 +7,7 @@ function ProductDetails({ onAddToCart }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://e-commerce-project-ten-ecru.vercel.app")
+    fetch(`https://e-commerce-project-ten-ecru.vercel.app/api/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);

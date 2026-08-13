@@ -7,7 +7,7 @@ function Home({ searchTerm, onAddToCart }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://e-commerce-project-ten-ecru.vercel.app")
+    fetch("https://e-commerce-project-ten-ecru.vercel.app/api/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
