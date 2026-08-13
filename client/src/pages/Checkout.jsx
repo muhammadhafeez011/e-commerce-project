@@ -22,19 +22,22 @@ function Checkout({ cartItems, clearCart }) {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/orders", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          userEmail,
-          items: cartItems.map((item) => ({
-            name: item.name,
-            price: item.price,
-            quantity: item.quantity,
-          })),
-          total,
-        }),
-      });
+      const res = await fetch(
+        "https://e-commerce-project-ten-ecru.vercel.app",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            userEmail,
+            items: cartItems.map((item) => ({
+              name: item.name,
+              price: item.price,
+              quantity: item.quantity,
+            })),
+            total,
+          }),
+        },
+      );
 
       if (!res.ok) {
         alert("Failed to place order. Try again.");
